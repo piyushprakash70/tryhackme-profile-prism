@@ -1,4 +1,3 @@
-
 export interface User {
   username: string;
   avatar: string;
@@ -59,12 +58,9 @@ export interface UserData {
   recentActivity: Activity[];
 }
 
-// Simulated API call to TryHackMe
-export const getUserData = async (): Promise<UserData> => {
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 1500));
-
-  return {
+// Sample user data for different usernames
+const sampleUsers: Record<string, UserData> = {
+  "CyberNinja42": {
     user: {
       username: "CyberNinja42",
       avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=150&h=150&fit=crop&crop=face",
@@ -190,5 +186,126 @@ export const getUserData = async (): Promise<UserData> => {
         timestamp: "3 days ago"
       }
     ]
-  };
+  },
+  "HackMaster99": {
+    user: {
+      username: "HackMaster99",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      joinDate: "2022-06-10",
+      country: "United Kingdom",
+      level: 18
+    },
+    stats: {
+      totalPoints: 28750,
+      globalRank: 567,
+      countryRank: 45,
+      roomsCompleted: 89,
+      badgesEarned: 41,
+      streakDays: 45
+    },
+    rooms: [
+      {
+        id: "1",
+        name: "Nmap",
+        difficulty: "Easy",
+        category: "Network Security",
+        completed: true,
+        completedDate: "2022-07-15",
+        points: 300,
+        progress: 100
+      },
+      {
+        id: "2",
+        name: "Metasploit Introduction",
+        difficulty: "Medium",
+        category: "Penetration Testing",
+        completed: true,
+        completedDate: "2022-08-20",
+        points: 450,
+        progress: 100
+      },
+      {
+        id: "3",
+        name: "Burp Suite",
+        difficulty: "Medium",
+        category: "Web Application Security",
+        completed: true,
+        completedDate: "2022-09-10",
+        points: 500,
+        progress: 100
+      },
+      {
+        id: "4",
+        name: "Active Directory Basics",
+        difficulty: "Hard",
+        category: "Windows",
+        completed: false,
+        points: 700,
+        progress: 80
+      }
+    ],
+    badges: [
+      {
+        id: "1",
+        name: "Elite Hacker",
+        description: "Reach the top 1000 globally",
+        icon: "👑",
+        rarity: "Legendary",
+        earnedDate: "2023-12-01"
+      },
+      {
+        id: "2",
+        name: "Network Ninja",
+        description: "Complete 20 network security rooms",
+        icon: "🌐",
+        rarity: "Epic",
+        earnedDate: "2023-08-15"
+      },
+      {
+        id: "3",
+        name: "Persistence Pro",
+        description: "Maintain a 60-day streak",
+        icon: "⚡",
+        rarity: "Epic",
+        earnedDate: "2023-10-30"
+      }
+    ],
+    ranking: {
+      global: 567,
+      country: 45,
+      percentile: 98.7,
+      nextRankPoints: 250,
+      currentRankName: "Elite Hacker"
+    },
+    recentActivity: [
+      {
+        action: "Completed 'Active Directory Basics' room",
+        timestamp: "30 minutes ago",
+        points: 700
+      },
+      {
+        action: "Earned 'Elite Hacker' badge",
+        timestamp: "3 hours ago"
+      },
+      {
+        action: "Started 'Advanced Persistent Threats' room",
+        timestamp: "1 day ago"
+      }
+    ]
+  }
+};
+
+// Simulated API call to TryHackMe
+export const getUserData = async (username: string): Promise<UserData> => {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 1500));
+
+  // Check if user exists in our sample data
+  const userData = sampleUsers[username];
+  
+  if (!userData) {
+    throw new Error(`User "${username}" not found`);
+  }
+
+  return userData;
 };
