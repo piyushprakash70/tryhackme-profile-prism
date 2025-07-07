@@ -60,6 +60,112 @@ export interface UserData {
 
 // Sample user data for different usernames
 const sampleUsers: Record<string, UserData> = {
+  "piyushprakash70": {
+    user: {
+      username: "piyushprakash70",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      joinDate: "2023-05-20",
+      country: "India",
+      level: 8
+    },
+    stats: {
+      totalPoints: 8750,
+      globalRank: 12543,
+      countryRank: 892,
+      roomsCompleted: 28,
+      badgesEarned: 15,
+      streakDays: 7
+    },
+    rooms: [
+      {
+        id: "1",
+        name: "Introduction to Penetration Testing",
+        difficulty: "Easy",
+        category: "Penetration Testing",
+        completed: true,
+        completedDate: "2023-06-01",
+        points: 200,
+        progress: 100
+      },
+      {
+        id: "2",
+        name: "Linux Fundamentals Part 1",
+        difficulty: "Easy",
+        category: "Linux",
+        completed: true,
+        completedDate: "2023-06-15",
+        points: 300,
+        progress: 100
+      },
+      {
+        id: "3",
+        name: "Web Application Security",
+        difficulty: "Medium",
+        category: "Web Application Security",
+        completed: false,
+        points: 450,
+        progress: 40
+      },
+      {
+        id: "4",
+        name: "Network Services",
+        difficulty: "Medium",
+        category: "Network Security",
+        completed: true,
+        completedDate: "2023-07-10",
+        points: 400,
+        progress: 100
+      }
+    ],
+    badges: [
+      {
+        id: "1",
+        name: "Welcome Badge",
+        description: "Welcome to TryHackMe!",
+        icon: "🎉",
+        rarity: "Common",
+        earnedDate: "2023-05-20"
+      },
+      {
+        id: "2",
+        name: "Linux Learner",
+        description: "Complete 5 Linux rooms",
+        icon: "🐧",
+        rarity: "Rare",
+        earnedDate: "2023-07-01"
+      },
+      {
+        id: "3",
+        name: "Web Explorer",
+        description: "Start exploring web security",
+        icon: "🌐",
+        rarity: "Common",
+        earnedDate: "2023-06-20"
+      }
+    ],
+    ranking: {
+      global: 12543,
+      country: 892,
+      percentile: 75.2,
+      nextRankPoints: 1250,
+      currentRankName: "Script Kiddie"
+    },
+    recentActivity: [
+      {
+        action: "Started 'Web Application Security' room",
+        timestamp: "4 hours ago"
+      },
+      {
+        action: "Completed 'Network Services' room",
+        timestamp: "2 days ago",
+        points: 400
+      },
+      {
+        action: "Earned 'Linux Learner' badge",
+        timestamp: "1 week ago"
+      }
+    ]
+  },
   "CyberNinja42": {
     user: {
       username: "CyberNinja42",
